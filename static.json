@@ -1,0 +1,103 @@
+{
+    "encoding": "US-ASCII"
+}
+
+{
+  "clean_urls": true
+}
+
+{
+  "logging": {
+    "access": false,
+    "error": "warn"
+  }
+}
+
+{
+  "routes": {
+    "/*.html": "index.html",
+    "/project0/**": "index.html"
+  }
+}
+
+{
+  "routes": {
+    "/assets/*": "/assets/",
+    "/**": "index.html"
+  }
+}
+
+{
+  "redirects": {
+    "/old/gone/": {
+      "url": "/",
+      "status": 302
+    }
+  }
+}
+
+{
+  "redirects": {
+    "/old/gone/": {
+      "url": "${NEW_SITE_DOMAIN}/new/here/"
+    }
+  }
+}
+
+{
+  "error_page": "errors/error.html"
+}
+
+{
+  "https_only": true
+}
+
+{
+  "proxies": {
+    "/api/": {
+      "origin": "https://hone-ember-todo-rails.herokuapp.com/"
+    }
+  }
+}
+
+{
+  "proxies": {
+    "/api/": {
+      "origin": "https://${API_APP_NAME}.herokuapp.com/"
+    }
+  }
+}
+
+{
+  "headers": {
+    "/": {
+      "Cache-Control": "no-store, no-cache"
+    },
+    "/assets/**": {
+      "Cache-Control": "public, max-age=512000"
+    },
+    "/assets/webfonts/*": {
+      "Access-Control-Allow-Origin": "*"
+    }
+  }
+}
+
+{
+  "headers": {
+    "/**": {
+      "Access-Control-Allow-Origin": "*"
+    }
+  }
+}
+
+{
+  "headers": {
+    "/**": {
+      "X-Foo": "bar",
+      "X-Bar": "baz"
+    },
+    "/foo": {
+      "X-Foo": "foo"
+    }
+  }
+}
